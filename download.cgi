@@ -18,3 +18,5 @@ link=form.getValue('name')
 
 print(link)
 
+print("""</body></html>""")
+
