@@ -43,12 +43,20 @@ for line in cur:
     print(line)
     print("""<br>""")
 
-print("""<label for="link">Télecharger une musique: </label> """)
-
-print(""" <input type="text" id="link" name="link" required
-       minlength="4" size="10">
+print("\n")
+print(""" <form>
+  <div>
+    <label for="uname">Télécharger une musique: </label>
+    <input type="text" id="uname" name="name"
+           placeholder="Indiquer le titre et le nom d'artiste">
+  </div>
+  <div>
+    <button>Télecharger</button>
+  </div>
+</form>
  """)
 
+print("\n")
 print(""" <form action="index.cgi" method="POST">
    <button>Retour</button>
   </form>""")
