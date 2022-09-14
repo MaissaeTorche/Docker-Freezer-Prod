@@ -16,7 +16,7 @@ services:
     container_name: "proftpd_docker"
     networks:
       freezer_network:
-        ipv4_address: 172.0.0.3
+        ipv4_address: 172.18.0.3
     build:
       context: .
       dockerfile: "proftpd"
