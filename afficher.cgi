@@ -43,8 +43,8 @@ for line in cur:
     print(line)
     print("""<br>""")
 
-print("\n")
-print(""" <form>
+
+print(""" <form action="download.sh" method="POST">
   <div>
     <label for="uname">Télécharger une musique: </label>
     <input type="text" id="uname" name="name"
@@ -56,7 +56,6 @@ print(""" <form>
 </form>
  """)
 
-print("\n")
 print(""" <form action="index.cgi" method="POST">
    <button>Retour</button>
   </form>""")
