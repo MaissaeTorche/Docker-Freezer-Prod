@@ -8,7 +8,7 @@ services:
       dockerfile: "mariadb"
     networks:
       freezer_network:
-        ipv4_address: 192.168.0.6
+        ipv4_address: 172.18.0.2
     ports :
       - "3306:3306"
     
@@ -16,7 +16,7 @@ services:
     container_name: "proftpd_docker"
     networks:
       freezer_network:
-        ipv4_address: 192.168.0.7
+        ipv4_address: 172.0.0.3
     build:
       context: .
       dockerfile: "proftpd"
@@ -32,7 +32,7 @@ services:
       - "443:443"
     networks:  
       freezer_network:
-        ipv4_address: 192.168.0.5
+        ipv4_address: 172.18.0.4
 
 networks:
   freezer_network:
@@ -40,5 +40,5 @@ networks:
     ipam:
       driver: default
       config:
-        - subnet: 192.168.0.0/24
-          gateway: 192.168.0.1
+        - subnet: 172.18.0.0/24
+          gateway: 172.18.0.1
