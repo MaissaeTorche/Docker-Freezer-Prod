@@ -44,7 +44,7 @@ for line in cur:
     print("""<br>""")
 
 
-print(""" <form action="download.cgi" method="get">
+print(""" <form action="download.cgi" method="POST">
   <div>
     <label for="uname">Télécharger une musique: </label>
     <input type="text" id="uname" name="name"
