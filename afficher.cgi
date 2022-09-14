@@ -22,7 +22,7 @@ try:
     conn = mariadb.connect(
     user="root",
     password="root",
-    host="172.18.0.2",
+    host="172.21.0.5",
     database="Music2"
     )
     print("\nConnexion a la base établie \n")
@@ -42,7 +42,6 @@ cur.execute("SELECT * FROM playlist;")
 for line in cur:
     print(line)
     print("""<br>""")
-
 
 
 print(""" <form action="index.cgi" method="POST">
