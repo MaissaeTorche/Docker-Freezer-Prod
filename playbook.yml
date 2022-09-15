@@ -1,0 +1,40 @@
+---
+    - name: First playbook
+      hosts: vm2 
+      vars:
+         ansible_python_interpreter: /usr/bin/python3.10
+      become: true 
+      remote_user: may
+      
+
+      tasks:
+      - name: Ensure that docker is stopped
+        ansible.builtin.service:
+          name: docker
+          state: stopped  
+      - name: Package installation (git, docker, python-pip)
+        pacman:
+          name: 
+            - git
+            - docker
+            - python-pip
+            - python-setuptools  
+          state: latest
+      - name: Installation of docker-py and docker compose
+        pip:
+          name: docker-compose
+          #state: forcereinstall
+      - name: Ensure that docker is started
+        ansible.builtin.service:
+          name: docker
+          state: started
+      - name: Clone github repository
+        git:
+          repo: https://github.com/MaissaeTorche/Docker-Freezer-Prod.git
+          dest: /home/may/Prod
+          clone: yes
+          update: yes
+      - name: deploy dockers
+        ansible.builtin.shell:
+          cmd: docker compose up
+          chdir: /home/may/Prod
