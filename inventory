@@ -1,0 +1,19 @@
+#/etc/ansible/hosts
+
+[inventory]
+may@localhost ansible_connection=local
+may@10.125.24.106
+10.125.24.106
+localhost ansible_connection=local
+
+[vm1]
+VM1 ansible_host=10.125.24.144 ansible_user=vmay
+
+[vm2]
+VM2 ansible_host=10.125.24.142 ansible_user=vmay
+
+[test]
+localhost ansible_host=10.125.24.112
+
+
+#serv1 ansible_host=ip ansible_ssh_user=may 
